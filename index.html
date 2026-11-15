@@ -1,1 +1,56 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a17">
+  <title>FireLedger | Canadian Wildfire Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FIRELEDGER<small>CANADIAN WILDFIRE INTELLIGENCE</small></span></a>
+    <div class="scope"><span class="live-dot"></span> CANADA <b>·</b> 2023 DATA SCOPE</div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">SITUATIONAL AWARENESS PLATFORM</p><h1>See the fire.<br><em>Understand the risk.</em></h1>
+      <p class="sub">A geographic intelligence workspace for wildfire response, analysis, and land management across Canada.</p></div>
+      <div class="scope-card"><span>ACTIVE DATA WINDOW</span><strong>01 JAN — 31 DEC 2023</strong><small>Canadian observations only</small></div>
+    </section>
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="panel-section"><p class="section-label">YOUR RESPONSE ROLE</p>
+          <label for="role">Tailor operational context</label>
+          <select id="role">
+            <option value="firefighter">Firefighter</option>
+            <option value="medical">Ambulance / Medical</option>
+            <option value="emergency">Emergency responder</option>
+            <option value="scientist">Scientist / Analyst</option>
+            <option value="land">Land manager</option>
+          </select>
+        </div>
+        <div class="panel-section"><p class="section-label">MAP LAYERS</p>
+          <label class="toggle"><input id="fires-toggle" type="checkbox" checked><span>Fire observations</span></label>
+          <label class="toggle"><input id="population-toggle" type="checkbox" checked><span>Population proximity</span></label>
+        </div>
+        <div class="panel-section"><p class="section-label">SELECTED AREA</p>
+          <div id="selection" class="selection">Select a location on the map to inspect its available intelligence.</div>
+        </div>
+        <div class="panel-section briefing"><p class="section-label">OPERATIONAL BRIEFING</p>
+          <div id="briefing" class="briefing-content">Select an observation or area to view its briefing. Role-specific analysis will appear here when data is connected.</div>
+        </div>
+        <p class="disclaimer">Decision-support information only. Verify conditions with official sources. Satellite fire radiative power (FRP) is not the same as fireline intensity; proximity flags do not confirm population exposure.</p>
+      </aside>
+      <section class="map-panel">
+        <div class="map-heading"><div><p class="section-label">NATIONAL OVERVIEW</p><h2>Canada</h2></div><span class="map-status">DATA FEED NOT CONNECTED</span></div>
+        <div id="map" role="application" aria-label="Map of Canada showing wildfire observations"></div>
+        <div class="map-footer"><span><i class="legend-dot fire"></i> Fire observation</span><span><i class="legend-dot population"></i> Population proximity flag</span><span>Click map to select an area</span></div>
+      </section>
+    </section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
